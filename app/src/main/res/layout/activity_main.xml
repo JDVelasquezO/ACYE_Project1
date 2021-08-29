@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" tools:ignore="MissingConstraints"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:outlineAmbientShadowColor="#20D5BF">
+        <Space
+                android:layout_width="1dp"
+                android:layout_height="20dp"/>
+        <Switch
+                android:text="On/Off"
+                android:layout_width="130dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content" android:id="@+id/switch1"/>
+        <Space
+                android:layout_width="1dp"
+                android:layout_height="150dp"/>
+        <TextView
+                android:text="Conduce el Auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView3"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        <Space
+                android:layout_width="1dp"
+                android:layout_height="20dp"/>
+        <ImageButton
+                android:layout_width="115dp"
+                android:layout_height="50dp" app:srcCompat="@android:drawable/arrow_up_float"
+                android:id="@+id/imageButton"
+                android:layout_gravity="center_horizontal|center_vertical"
+        />
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" app:srcCompat="@android:drawable/ic_media_rew"
+                    android:id="@+id/imageButton7" android:layout_weight="1"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" app:srcCompat="@android:drawable/ic_notification_overlay"
+                    android:id="@+id/imageButton4" android:layout_weight="1"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" app:srcCompat="@android:drawable/ic_media_ff"
+                    android:id="@+id/imageButton6" android:layout_weight="1"/>
+        </LinearLayout>
+        <ImageButton
+                android:layout_width="115dp"
+                android:layout_height="50dp" app:srcCompat="@android:drawable/arrow_down_float"
+                android:id="@+id/imageButton9"
+                android:layout_gravity="center_horizontal|center_vertical"
+        />
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_off"
+                android:id="@+id/imageButton10"
+                android:layout_gravity="right"
+        />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
