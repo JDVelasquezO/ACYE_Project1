@@ -55,6 +55,10 @@
                     android:id="@+id/btnStop" android:layout_weight="1"/>
             <ImageButton
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_media_play"
+                    android:id="@+id/btnPlay" android:layout_weight="1"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
                     android:layout_height="50dp" app:srcCompat="@android:drawable/ic_media_ff"
                     android:id="@+id/btnRight" android:layout_weight="1"/>
         </LinearLayout>
@@ -64,12 +68,22 @@
                 android:id="@+id/btnDown"
                 android:layout_gravity="center_horizontal|center_vertical"
         />
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_off"
-                android:id="@+id/imageButton10"
-                android:layout_gravity="right"
-        />
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_off"
+                    android:id="@+id/btnSpeed"
+                    android:layout_gravity="right"
+            />
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_dialog"
+                    android:id="@+id/btnLessSpeed"
+                    android:layout_gravity="left"/>
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
