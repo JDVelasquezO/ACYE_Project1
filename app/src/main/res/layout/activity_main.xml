@@ -21,7 +21,8 @@
                 android:text="On/Off"
                 android:layout_width="130dp"
                 android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content" android:id="@+id/switch1"/>
+                android:layout_height="wrap_content" android:id="@+id/switch1"
+        />
         <Space
                 android:layout_width="1dp"
                 android:layout_height="150dp"/>
@@ -37,7 +38,7 @@
         <ImageButton
                 android:layout_width="115dp"
                 android:layout_height="50dp" app:srcCompat="@android:drawable/arrow_up_float"
-                android:id="@+id/imageButton"
+                android:id="@+id/btnUp"
                 android:layout_gravity="center_horizontal|center_vertical"
         />
         <LinearLayout
@@ -47,20 +48,20 @@
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="50dp" app:srcCompat="@android:drawable/ic_media_rew"
-                    android:id="@+id/imageButton7" android:layout_weight="1"/>
+                    android:id="@+id/btnLeft" android:layout_weight="1"/>
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="50dp" app:srcCompat="@android:drawable/ic_notification_overlay"
-                    android:id="@+id/imageButton4" android:layout_weight="1"/>
+                    android:id="@+id/btnStop" android:layout_weight="1"/>
             <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="50dp" app:srcCompat="@android:drawable/ic_media_ff"
-                    android:id="@+id/imageButton6" android:layout_weight="1"/>
+                    android:id="@+id/btnRight" android:layout_weight="1"/>
         </LinearLayout>
         <ImageButton
                 android:layout_width="115dp"
                 android:layout_height="50dp" app:srcCompat="@android:drawable/arrow_down_float"
-                android:id="@+id/imageButton9"
+                android:id="@+id/btnDown"
                 android:layout_gravity="center_horizontal|center_vertical"
         />
         <ImageButton
