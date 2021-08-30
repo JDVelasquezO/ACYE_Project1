@@ -18,7 +18,7 @@
                 android:layout_width="1dp"
                 android:layout_height="20dp"/>
         <Switch
-                android:text="On/Off"
+                android:text="Off/On"
                 android:layout_width="130dp"
                 android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content" android:id="@+id/switch1"

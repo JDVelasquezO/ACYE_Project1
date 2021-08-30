@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
 
-        // Creamos adaptador puente entre mobil y hc05
+        // Creamos adaptador puente entre mobil y BT-PC
         BluetoothDevice hc05 = btAdapter.getRemoteDevice("E4:02:9B:84:EA:3F");
-        System.out.println(hc05.getName());
+        System.out.println("Nombre: " + hc05.getName());
 
         // Conexion entre telefono y HC05
         int counter = 0;
@@ -108,11 +108,12 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             }
         });
 
+        BluetoothSocket finalBtSocket2 = btSocket;
         left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    sendChar(finalBtSocket1, 'L');
+                    sendChar(finalBtSocket2, 'L');
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             @Override
             public void onClick(View view) {
                 try {
-                    sendChar(finalBtSocket1, 'R');
+                    sendChar(finalBtSocket2, 'R');
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
