@@ -14,6 +14,7 @@ const int pinOrientacion=A0;    //Izquierda o derecha
 const int pinDireccion=A1;      //Adelante o atras
 const int pinApagado=A2;        //Apagado
 const int pinVelocidad=A3;      //lento o rapido
+int pinUltra = 5;
 
 int orientacion=0; 
 int velocidad=0;
@@ -24,7 +25,6 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   Serial1.begin(9600);
-  //Serial2.begin(9600);
   
   pinMode(pin11,OUTPUT);
   pinMode(pin12,OUTPUT);
@@ -57,6 +57,7 @@ void loop() {
   orientacion = digitalRead(pinOrientacion);
   
   if (Serial1.available() > 0) {
+      int cm = 0.01723*readUltrasonic(pinUltra, pinUltra);
       char readed = Serial1.read();
 
       if (readed == 'L' || readed == 'R') {
@@ -88,25 +89,52 @@ void loop() {
       }
       else if (readed == '1') {
 
-        if(vel=='B'){
-          velocidad=100;
-        }else if(vel == 'S') {
-          velocidad=250;
-        }
-        
-         if(dir=='L'){
-          izquierda(velocidad, ori);
-          digitalWrite(pinLEDIZQUIERDA,HIGH);
-          digitalWrite(pinLEDDERECHA,LOW);
-          digitalWrite(pinLEDTRASERA,LOW);
-        }else if (dir=='R'){
-          derecha(velocidad, ori); 
-          digitalWrite(pinLEDIZQUIERDA,LOW);
-          digitalWrite(pinLEDDERECHA,HIGH);
-          digitalWrite(pinLEDTRASERA,LOW);
-        }
+          if (cm <= 20) {
+
+            apagado();
+            digitalWrite(pinLEDIZQUIERDA,LOW);
+            digitalWrite(pinLEDDERECHA,LOW);
+            digitalWrite(pinLEDTRASERA,HIGH);
+            Serial1.print(cm);
+             
+          } else {
+            if(vel=='B'){
+              velocidad=100;
+            }else if(vel == 'S') {
+              velocidad=250;
+            }
+            
+             if(dir=='L'){
+              izquierda(velocidad, ori);
+              digitalWrite(pinLEDIZQUIERDA,HIGH);
+              digitalWrite(pinLEDDERECHA,LOW);
+              digitalWrite(pinLEDTRASERA,LOW);
+            }else if (dir=='R'){
+              derecha(velocidad, ori); 
+              digitalWrite(pinLEDIZQUIERDA,LOW);
+              digitalWrite(pinLEDDERECHA,HIGH);
+              digitalWrite(pinLEDTRASERA,LOW);
+            }
+          }
       }
   }
+}
+
+void funcion() {
+  Serial.println('a');
+}
+
+int readUltrasonic(int triggerPin,int echoPin){
+  pinMode(triggerPin,OUTPUT);
+  digitalWrite(triggerPin,LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(triggerPin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPin,LOW);
+  pinMode(echoPin,INPUT);
+
+  return pulseIn(echoPin,HIGH);
 }
 
 void derecha(int velocidad, char readed){
