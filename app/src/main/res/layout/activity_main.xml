@@ -83,6 +83,11 @@
                     android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_dialog"
                     android:id="@+id/btnLessSpeed"
                     android:layout_gravity="left"/>
+            <TextView
+                    android:text="¡LLEGASTE A LA META!"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content" android:id="@+id/txtMeta" android:layout_weight="1"
+                    android:visibility="invisible"/>
         </LinearLayout>
     </LinearLayout>
 
